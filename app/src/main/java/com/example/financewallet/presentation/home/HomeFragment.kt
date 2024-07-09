@@ -1,15 +1,15 @@
 package com.example.financewallet.presentation.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.financewallet.R
+import com.example.financewallet.databinding.FragmentHomeBinding
 import com.example.financewallet.presentation.assetList.AssetListFragment
 import com.example.financewallet.presentation.portfolio.PortfolioListFragment
-import com.example.financewallet.R
 import com.example.financewallet.presentation.settings.SettingsFragment
-import com.example.financewallet.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
@@ -17,7 +17,8 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
