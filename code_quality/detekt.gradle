@@ -1,0 +1,28 @@
+ext {
+    detekt_version = '1.19.0'
+}
+
+configurations {
+    detekt
+}
+
+dependencies {
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:$detekt_version")
+    detekt("io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version")
+}
+
+task detekt(type: JavaExec, group: "codeQuality") {
+    description = "Lines of code I'm ashaimed of!!!"
+    classpath = configurations.detekt
+    main = "io.gitlab.arturbosch.detekt.cli.Main"
+    def input = "$rootDir"
+    def config = "$rootDir/code_quality/detekt.yml"
+    def exclude = ".*/resources/.*,.*/build/.*, .*/tmp/.*"
+    def report = "html:${buildDir}/reports/detekt.html"
+    args = [
+            '-i', input,
+            '-c', config,
+            '-ex', exclude,
+            '-r', report
+    ]
+}

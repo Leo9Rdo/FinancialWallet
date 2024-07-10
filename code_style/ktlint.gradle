@@ -1,0 +1,36 @@
+ext {
+    // Do not change the version. In newer versions there is a code-formatter conflict
+    // between ktlint and Android Studio formatter - continuation indent 4 vs 8.
+    // It can't be changed from .editorconfig
+    ktlint_version = '0.35.0'
+}
+
+configurations {
+    ktlint
+}
+
+dependencies {
+    ktlint "com.pinterest:ktlint:$ktlint_version"
+}
+
+task ktlint(type: JavaExec, group: "codestyle") {
+    description = "Check Kotlin code style"
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args = [
+            "--android",
+            "src/**/*.kt",
+            "--reporter=plain",
+            "--reporter=checkstyle,output=${buildDir}/reports/ktlint-style-report.xml"]
+}
+
+task ktlintFormat(type: JavaExec, group: "codestyle") {
+    description = "Check Kotlin code style deviations and autocorrect them"
+    main = "com.pinterest.ktlint.Main"
+    classpath = configurations.ktlint
+    args = [
+            "--android",
+            "-F", "src/**/*.kt",
+            "--reporter=plain",
+            "--reporter=checkstyle,output=${buildDir}/reports/ktlint-formatting-report.xml"]
+}
