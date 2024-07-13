@@ -1,0 +1,97 @@
+package com.example.financewallet.data
+
+import com.example.financewallet.domain.entity.Asset
+import com.example.financewallet.domain.entity.Bond
+import com.example.financewallet.domain.entity.Cash
+import com.example.financewallet.domain.entity.Currency
+import com.example.financewallet.domain.entity.Stock
+import java.time.LocalDate
+
+object StubAssetList {
+    private val usd = Currency("USD", "Доллар", 1.0)
+    private val eur = Currency("EUR", "Евро", 1.09)
+    private val byn = Currency("BYN", "Белорусский рубль", 3.2)
+
+    val assets: List<Asset> = listOf(
+        Cash(
+            id = 1,
+            name = "Наличные в долларах",
+            currency = usd,
+            marketValue = 1000.0,
+            purchaseDate = LocalDate.of(2024, 1, 15)
+        ),
+        Cash(
+            id = 2,
+            name = "Наличные в евро",
+            currency = eur,
+            marketValue = 850.0,
+            purchaseDate = LocalDate.of(2024, 2, 15)
+        ),
+        Cash(
+            id = 3,
+            name = "Наличные в белорусских рублях",
+            currency = byn,
+            marketValue = 2500.0,
+            purchaseDate = LocalDate.of(2024, 3, 15)
+        ),
+        Stock(
+            id = 4,
+            name = "Акции Google",
+            currency = usd,
+            marketValue = 1500.0,
+            purchaseDate = LocalDate.of(2021, 5, 10),
+            amount = 10
+        ),
+        Stock(
+            id = 5,
+            name = "Акции Apple",
+            currency = usd,
+            marketValue = 2000.0,
+            purchaseDate = LocalDate.of(2022, 6, 10),
+            amount = 15
+        ),
+        Stock(
+            id = 6,
+            name = "Акции Microsoft",
+            currency = usd,
+            marketValue = 1800.0,
+            purchaseDate = LocalDate.of(2021, 7, 10),
+            amount = 20
+        ),
+        Stock(
+            id = 7,
+            name = "Акции Amazon",
+            currency = usd,
+            marketValue = 2200.0,
+            purchaseDate = LocalDate.of(2023, 8, 10),
+            amount = 5
+        ),
+        Bond(
+            id = 8,
+            name = "Облигации ООО «АСБ Лизинг»",
+            currency = usd,
+            marketValue = 2000.0,
+            purchaseDate = LocalDate.of(2020, 3, 20),
+            couponRate = 1.5,
+            expiryDate = LocalDate.of(2030, 1, 1)
+        ),
+        Bond(
+            id = 9,
+            name = "Облигации ОАО «Амкадор-Унимод»",
+            currency = usd,
+            marketValue = 2500.0,
+            purchaseDate = LocalDate.of(2019, 4, 20),
+            couponRate = 2.0,
+            expiryDate = LocalDate.of(2029, 1, 1)
+        ),
+        Bond(
+            id = 10,
+            name = "Облигации ОДО «ТУТ и ТАМ Логистикс»",
+            currency = usd,
+            marketValue = 3000.0,
+            purchaseDate = LocalDate.of(2018, 5, 20),
+            couponRate = 2.5,
+            expiryDate = LocalDate.of(2028, 1, 1)
+        )
+    )
+}
