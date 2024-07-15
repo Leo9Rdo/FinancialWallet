@@ -6,6 +6,7 @@
     tools:context=".presentation.settings.SettingsFragment">
 
     <TextView
+        android:id="@+id/fragment_settings_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
