@@ -15,7 +15,9 @@ class AssetListFragment : Fragment() {
 
     private var _binding: FragmentAssetListBinding? = null
     private val binding get() = _binding!!
-    private lateinit var assetAdapter: AssetAdapter
+    private val assetAdapter by lazy {
+        AssetAdapter()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,18 +30,21 @@ class AssetListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configureRecyclerView()
+        loadAssets()
+    }
 
-        assetAdapter = AssetAdapter()
-        binding.assetRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+    private fun configureRecyclerView() {
         binding.assetRecyclerView.adapter = assetAdapter
+    }
 
+    private fun loadAssets() {
         val assetRepository: AssetRepository = AssetRepositoryImpl()
-        assetAdapter.updateList(assetRepository.getAllAssets())
+        assetAdapter.submitList(assetRepository.getAllAssets())
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-
         _binding = null
     }
 }
