@@ -9,7 +9,7 @@
         android:id="@+id/asset_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asset name"
+        android:text="@string/asset_name"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -17,20 +17,20 @@
         android:id="@+id/asset_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asset currency"
+        android:text="@string/asset_currency"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/asset_market_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asset market value"
+        android:text="@string/asset_market_value"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/asset_purchase_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asset purchase date"
+        android:text="@string/asset_purchase_date"
         android:textSize="16sp" />
 </LinearLayout>
