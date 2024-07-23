@@ -6,8 +6,8 @@
     tools:context=".presentation.portfolio.PortfolioListFragment">
 
     <TextView
+        android:id="@+id/fragment_portfolio_list_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Portfolio" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

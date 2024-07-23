@@ -6,8 +6,8 @@
     tools:context=".presentation.assetList.AssetListFragment">
 
     <TextView
+        android:id="@+id/fragment_asset_list_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Assets" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

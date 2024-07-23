@@ -36,14 +36,21 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
 
 dependencies {
-
+    def nav_version = "2.7.7"
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
     implementation libs.androidx.core.ktx
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    androidTestImplementation libs.androidx.navigation.testing
     implementation libs.androidx.appcompat
     implementation libs.material
     implementation libs.androidx.activity
