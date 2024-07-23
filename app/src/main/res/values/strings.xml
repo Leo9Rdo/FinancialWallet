@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">FinanceWallet</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_home">Home</string>
+    <string name="navigation_portfolio">Portfolio</string>
+    <string name="navigation_assets">Assets</string>
+    <string name="navigation_settings">Settings</string>
     <string name="asset_name">Asset name</string>
     <string name="asset_currency">Asset currency</string>
     <string name="asset_market_value">Asset market value</string>
     <string name="asset_purchase_date">Asset purchase date</string>
-    <string name="settings">Settings</string>
 </resources>

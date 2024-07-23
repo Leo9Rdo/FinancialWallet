@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.financewallet.data.AssetRepositoryImpl
 import com.example.financewallet.databinding.FragmentAssetListBinding
 import com.example.financewallet.domain.repository.AssetRepository

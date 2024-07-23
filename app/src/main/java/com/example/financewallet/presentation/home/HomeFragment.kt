@@ -7,9 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.financewallet.R
 import com.example.financewallet.databinding.FragmentHomeBinding
-import com.example.financewallet.presentation.assetList.AssetListFragment
-import com.example.financewallet.presentation.portfolio.PortfolioListFragment
-import com.example.financewallet.presentation.settings.SettingsFragment
 
 class HomeFragment : Fragment() {
 
@@ -23,21 +20,6 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        with(binding) {
-            portfolioListBtn.setOnClickListener {
-                loadFragment(PortfolioListFragment())
-            }
-            settingsBtn.setOnClickListener {
-                loadFragment(SettingsFragment())
-            }
-            assetListBtn.setOnClickListener {
-                loadFragment(AssetListFragment())
-            }
-        }
     }
 
     private fun loadFragment(fragment: Fragment) {
