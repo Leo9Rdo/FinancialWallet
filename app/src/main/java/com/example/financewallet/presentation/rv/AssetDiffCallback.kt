@@ -9,6 +9,6 @@ class AssetDiffCallback : DiffUtil.ItemCallback<Asset>() {
     }
 
     override fun areContentsTheSame(oldItem: Asset, newItem: Asset): Boolean {
-        return oldItem == newItem
+        return oldItem.areContentsTheSame(newItem)
     }
 }
