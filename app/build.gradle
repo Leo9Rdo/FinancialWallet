@@ -6,7 +6,8 @@ buildscript {
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.jetbrains.kotlin.kapt)
 }
 
 android {
@@ -42,14 +43,14 @@ android {
 }
 
 dependencies {
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
     def nav_version = "2.7.7"
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
     implementation libs.androidx.core.ktx
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
-    implementation libs.androidx.navigation.fragment.ktx
-    implementation libs.androidx.navigation.ui.ktx
     androidTestImplementation libs.androidx.navigation.testing
     implementation libs.androidx.appcompat
     implementation libs.material
