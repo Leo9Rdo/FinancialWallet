@@ -6,8 +6,8 @@ buildscript {
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.jetbrains.kotlin.kapt)
 }
 
 android {
