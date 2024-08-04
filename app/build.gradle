@@ -43,6 +43,13 @@ android {
 }
 
 dependencies {
+    implementation libs.retrofit
+    implementation libs.converter.moshi
+    implementation libs.moshi.kotlin
+    implementation libs.moshi
+    implementation libs.moshi.kotlin.v1130
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
     implementation libs.hilt.android
     kapt libs.hilt.compiler
     def nav_version = "2.7.7"
