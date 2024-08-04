@@ -13,7 +13,7 @@ object StubAssetList {
     private val _assets = mutableListOf<Asset>()
     val assets: List<Asset> get() = _assets
 
-    fun stubAssets(currencyInteractor: CurrencyInteractor) {
+    suspend fun stubAssets(currencyInteractor: CurrencyInteractor) {
         _assets.clear()
 
         val currencyList = currencyInteractor.getAllCurrencies()

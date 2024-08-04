@@ -10,11 +10,11 @@ class CurrencyInteractor @Inject constructor(
     private val currencyRepositoryImpl: CurrencyRepositoryImpl
 ) {
 
-    fun getAllCurrencies(): List<Currency> {
+    suspend fun getAllCurrencies(): List<Currency> {
         return currencyRepositoryImpl.getAllCurrencies()
     }
 
-    fun getCurrencyByAbbreviation(abbreviation: String) {
+    suspend fun getCurrencyByAbbreviation(abbreviation: String) {
         currencyRepositoryImpl.getCurrencyByAbbreviation(abbreviation)
     }
 }
