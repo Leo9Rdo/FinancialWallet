@@ -1,26 +1,19 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable
-            name="portfolio"
-            type="com.example.financewallet.domain.entity.Portfolio" />
-    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/text_view_portfolio_name"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_vertical">
-
-        <TextView
-            android:id="@+id/text_view_portfolio_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@{portfolio.name}"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
-            android:paddingEnd="16dp" />
+        android:text="@{portfolio.name}"
+        android:layout_weight="1"
+        android:layout_marginEnd="8dp"/>
 
         <Button
             android:id="@+id/btn_edit"
@@ -34,4 +27,5 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_delete" />
     </LinearLayout>
-</layout>
+
+

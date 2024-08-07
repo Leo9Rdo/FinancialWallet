@@ -9,6 +9,6 @@ class PortfolioDiffCallback : DiffUtil.ItemCallback<Portfolio>() {
     }
 
     override fun areContentsTheSame(oldItem: Portfolio, newItem: Portfolio): Boolean {
-        return oldItem.areContentsTheSame(newItem)
+        return oldItem == newItem
     }
 }

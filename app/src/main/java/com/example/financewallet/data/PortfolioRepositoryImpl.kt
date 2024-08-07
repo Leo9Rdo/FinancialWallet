@@ -7,30 +7,29 @@ import javax.inject.Singleton
 
 @Singleton
 class PortfolioRepositoryImpl @Inject constructor() : PortfolioRepository {
-    private val portfolios = mutableListOf<Portfolio>()
+    private val portfolios = mutableMapOf<Int, Portfolio>()
 
     override suspend fun getPortfolio(id: Int): Portfolio {
-        return portfolios.find { it.id == id } ?: throw Exception("Portfolio not found")
+        return portfolios[id] ?: throw NoSuchElementException("Portfolio not found")
     }
 
     override suspend fun getAllPortfolios(): List<Portfolio> {
-        return portfolios
+        return portfolios.values.toList()
     }
 
     override suspend fun addPortfolio(portfolio: Portfolio) {
-        portfolios.add(portfolio)
+        portfolios[portfolio.id] = portfolio
     }
 
     override suspend fun updatePortfolio(portfolio: Portfolio) {
-        val index = portfolios.indexOfFirst { it.id == portfolio.id }
-        if (index != -1) {
-            portfolios[index] = portfolio
+        if (portfolios.containsKey(portfolio.id)) {
+            portfolios[portfolio.id] = portfolio
         } else {
-            throw Exception("Portfolio not found")
+            throw NoSuchElementException("Portfolio not found")
         }
     }
 
     override suspend fun deletePortfolio(id: Int) {
-        portfolios.removeIf { it.id == id }
+        portfolios.remove(id)
     }
 }

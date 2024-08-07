@@ -14,9 +14,9 @@ data class Portfolio(
         }
     }
 
-   fun areContentsTheSame(other: Portfolio): Boolean {
+    fun areContentsTheSame(other: Portfolio): Boolean {
         return id == other.id &&
                 name == other.name &&
-               assets == other.assets
+                assets == other.assets
     }
 }
