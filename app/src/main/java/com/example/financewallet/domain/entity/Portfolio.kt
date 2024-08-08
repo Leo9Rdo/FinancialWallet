@@ -13,10 +13,4 @@ data class Portfolio(
             asset.marketValue * asset.currency.exchangeRate / displayCurrency.exchangeRate
         }
     }
-
-    fun areContentsTheSame(other: Portfolio): Boolean {
-        return id == other.id &&
-                name == other.name &&
-                assets == other.assets
-    }
 }

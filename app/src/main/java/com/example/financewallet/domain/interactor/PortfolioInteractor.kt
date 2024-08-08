@@ -16,9 +16,7 @@ class PortfolioInteractor @Inject constructor(
     }
 
     suspend fun addPortfolio(name: String): Portfolio {
-        val portfolios = portfolioRepository.getAllPortfolios()
-        val newId = (portfolios.maxByOrNull { it.id }?.id ?: 0) + 1
-        val newPortfolio = Portfolio(id = newId, name = name, assets = listOf())
+        val newPortfolio = Portfolio(id = 0, name = name, assets = listOf())
         portfolioRepository.addPortfolio(newPortfolio)
         return newPortfolio
     }

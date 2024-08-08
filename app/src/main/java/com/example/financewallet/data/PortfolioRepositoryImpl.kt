@@ -18,7 +18,9 @@ class PortfolioRepositoryImpl @Inject constructor() : PortfolioRepository {
     }
 
     override suspend fun addPortfolio(portfolio: Portfolio) {
-        portfolios[portfolio.id] = portfolio
+        val newId = (portfolios.keys.maxOrNull() ?: 0) + 1
+        val newPortfolio = portfolio.copy(id = newId)
+        portfolios[newPortfolio.id] = newPortfolio
     }
 
     override suspend fun updatePortfolio(portfolio: Portfolio) {
